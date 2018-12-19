@@ -1,3 +1,3 @@
-# Sushi Go Yūjin
+# Sushi Go Friend
 
 🍣 A companion app for Sushi Go!
