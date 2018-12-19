@@ -4,13 +4,13 @@ export const StyledP = styled.p`
   margin: 0;
   opacity: 0;
   text-align: center;
-  transform: translateY(-2rem);
+  transform: translateY(-1rem);
   transition: all 200ms ease-in-out;
 `;
 
 export const StyledHeader = styled.header`
   &:hover ${StyledP} {
-    opacity: 1;
+    opacity: 0.5;
     transform: translateY(0);
   }
 `;

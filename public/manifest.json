@@ -1,5 +1,5 @@
 {
-  "short_name": "Sushi Go Yūjin",
+  "short_name": "Sushi Go Friend",
   "name": "A companion app for Sushi Go!",
   "icons": [
     {
@@ -11,5 +11,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#CB3736"
 }
