@@ -3,6 +3,7 @@ import React from "react";
 import { StyledDiv } from "./styled";
 
 import Header from "components/Header";
+import IconButton from "components/common/IconButton";
 import Input from "components/Input";
 
 function App(props) {
@@ -36,15 +37,19 @@ function App(props) {
             {players.map(player => (
               <li key={player.id} tabIndex={0}>
                 {player.name}
-                <button type="button" onClick={() => removePlayer(player.id)}>
-                  Remove
-                </button>
+                <IconButton
+                  icon={"Delete"}
+                  label="Remove"
+                  onClick={() => removePlayer(player.id)}
+                />
               </li>
             ))}
           </ul>
-          <button type="button" onClick={removeAllPlayers}>
-            Remove all
-          </button>
+          <IconButton
+            icon={"Trash2"}
+            label="Remove all"
+            onClick={removeAllPlayers}
+          />
         </React.Fragment>
       )}
     </StyledDiv>
