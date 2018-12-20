@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import THEME from "styles/theme";
+import THEME from 'styles/theme'
 
 export const StyledButton = styled.button`
   align-items: center;
@@ -18,4 +18,4 @@ export const StyledButton = styled.button`
   &:focus {
     color: ${THEME.ORANGE};
   }
-`;
+`

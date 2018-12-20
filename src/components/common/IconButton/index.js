@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import Icon from "components/common/Icon";
+import Icon from 'components/common/Icon'
 
-import { StyledButton } from "./styled";
+import { StyledButton } from './styled'
 
 function IconButton({ icon, label, onClick, ...props }) {
   return (
@@ -11,11 +11,11 @@ function IconButton({ icon, label, onClick, ...props }) {
       <Icon icon={icon} {...props} />
       {label && <span>{label}</span>}
     </StyledButton>
-  );
+  )
 }
 
 IconButton.propTypes = {
   onClick: PropTypes.func.isRequired
-};
+}
 
-export default IconButton;
+export default IconButton
