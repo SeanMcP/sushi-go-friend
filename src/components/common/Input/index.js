@@ -8,8 +8,15 @@ import {
   StyledLabelText
 } from './styled'
 
-function Input({ help, label, onKeyPress, ...props }) {
-  const [value, setValue] = React.useState('')
+function Input({ help, label, onChange, onKeyPress, value = '', ...props }) {
+  const [_value, setValue] = React.useState(value)
+
+  function handleOnChange(e) {
+    if (onChange) {
+      onChange(e)
+    }
+    setValue(e.target.value)
+  }
 
   function handleOnKeyPress(e) {
     if (e.key === 'Enter' && onKeyPress) {
@@ -22,7 +29,7 @@ function Input({ help, label, onKeyPress, ...props }) {
     <StyledLabel onKeyPress={handleOnKeyPress} {...props}>
       <StyledLabelText>{label}</StyledLabelText>
       <StyledHelpText>{help}</StyledHelpText>
-      <StyledInput value={value} onChange={e => setValue(e.target.value)} />
+      <StyledInput value={_value} onChange={handleOnChange} />
     </StyledLabel>
   )
 }
