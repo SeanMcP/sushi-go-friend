@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-import { StyledHeader, StyledH1, StyledP } from "./styled";
+import { StyledHeader, StyledH1, StyledP } from './styled'
 
 function Header(props) {
   return (
@@ -8,7 +8,7 @@ function Header(props) {
       <StyledH1>寿司行く友人</StyledH1>
       <StyledP>Sushi Go Friend</StyledP>
     </StyledHeader>
-  );
+  )
 }
 
-export default Header;
+export default Header

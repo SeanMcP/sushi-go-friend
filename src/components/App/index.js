@@ -1,27 +1,27 @@
-import React from "react";
+import React from 'react'
 
-import { StyledDiv } from "./styled";
+import { StyledDiv } from './styled'
 
-import Header from "components/Header";
-import IconButton from "components/common/IconButton";
-import Input from "components/Input";
+import Header from 'components/Header'
+import IconButton from 'components/common/IconButton'
+import Input from 'components/Input'
 
 function App(props) {
-  const [players, setPlayers] = React.useState([]);
+  const [players, setPlayers] = React.useState([])
   function addPlayer(value) {
-    const playersCopy = [...players];
+    const playersCopy = [...players]
     playersCopy.push({
       id: new Date().getTime(),
       name: value
-    });
-    setPlayers(playersCopy);
+    })
+    setPlayers(playersCopy)
   }
   function removePlayer(id) {
-    const filteredPlayers = players.filter(player => player.id !== id);
-    setPlayers(filteredPlayers);
+    const filteredPlayers = players.filter(player => player.id !== id)
+    setPlayers(filteredPlayers)
   }
   function removeAllPlayers() {
-    setPlayers([]);
+    setPlayers([])
   }
   return (
     <StyledDiv>
@@ -38,7 +38,7 @@ function App(props) {
               <li key={player.id} tabIndex={0}>
                 {player.name}
                 <IconButton
-                  icon={"Delete"}
+                  icon={'Delete'}
                   label="Remove"
                   onClick={() => removePlayer(player.id)}
                 />
@@ -46,14 +46,14 @@ function App(props) {
             ))}
           </ul>
           <IconButton
-            icon={"Trash2"}
+            icon={'Trash2'}
             label="Remove all"
             onClick={removeAllPlayers}
           />
         </React.Fragment>
       )}
     </StyledDiv>
-  );
+  )
 }
 
-export default App;
+export default App
