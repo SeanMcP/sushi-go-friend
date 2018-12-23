@@ -3,6 +3,7 @@ import React from 'react'
 import Button from 'components/common/Button'
 import IconButton from 'components/common/IconButton'
 import Input from 'components/common/Input'
+import PlayerRow from 'components/common/PlayerRow'
 
 function PlayersView(props) {
   const {
@@ -14,14 +15,17 @@ function PlayersView(props) {
     for (const id in players) {
       const player = players[id]
       output.push(
-        <li key={id} tabIndex={0}>
-          {player.name}
-          <IconButton
-            icon={'Delete'}
-            label="Remove"
-            onClick={() => removePlayer(id)}
-          />
-        </li>
+        <PlayerRow
+          button={
+            <IconButton
+              icon={'Delete'}
+              label="Remove"
+              onClick={() => removePlayer(id)}
+            />
+          }
+          key={id}
+          name={player.name}
+        />
       )
     }
     return output
