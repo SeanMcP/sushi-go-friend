@@ -4,7 +4,7 @@ import THEME from 'styles/theme'
 
 export const StyledLabel = styled.label`
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
 `
 
 export const StyledLabelText = styled.div`

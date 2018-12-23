@@ -11,6 +11,7 @@ export const StyledButton = styled.button`
   font-weight: bold;
   padding: 1rem 2rem;
   text-transform: uppercase;
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : undefined)};
 
   &:active,
   &:focus,

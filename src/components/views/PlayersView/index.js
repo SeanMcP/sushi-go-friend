@@ -5,7 +5,7 @@ import IconButton from 'components/common/IconButton'
 import Input from 'components/common/Input'
 import PlayerRow from 'components/common/PlayerRow'
 
-import { StyledUl } from './styled'
+import { StyledUl, StyledDivButtonContainer } from './styled'
 
 function PlayersView(props) {
   const {
@@ -42,15 +42,19 @@ function PlayersView(props) {
       {Object.keys(players).length > 0 && (
         <React.Fragment>
           <StyledUl>{renderPlayers()}</StyledUl>
-          <IconButton
-            icon={'Trash2'}
-            label="Remove all"
-            onClick={removeAllPlayers}
-          />
+          <StyledDivButtonContainer>
+            <IconButton
+              icon={'Trash2'}
+              label="Remove all"
+              onClick={removeAllPlayers}
+            />
+          </StyledDivButtonContainer>
         </React.Fragment>
       )}
       {Object.keys(players).length > 1 && (
-        <Button onClick={() => navigate('record')}>Go!</Button>
+        <Button onClick={() => navigate('record')} fullWidth>
+          Go!
+        </Button>
       )}
     </div>
   )
