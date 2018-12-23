@@ -5,6 +5,8 @@ import IconButton from 'components/common/IconButton'
 import Input from 'components/common/Input'
 import PlayerRow from 'components/common/PlayerRow'
 
+import { StyledUl } from './styled'
+
 function PlayersView(props) {
   const {
     View: { navigate },
@@ -39,7 +41,7 @@ function PlayersView(props) {
       />
       {Object.keys(players).length > 0 && (
         <React.Fragment>
-          <ul>{renderPlayers()}</ul>
+          <StyledUl>{renderPlayers()}</StyledUl>
           <IconButton
             icon={'Trash2'}
             label="Remove all"
