@@ -2,6 +2,7 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 
 import Input from 'components/common/Input'
+import { StyledDivPlayer, StyledDivPlayerHead, StyledDivRounds } from './styled'
 
 function RecordView(props) {
   const {
@@ -12,19 +13,25 @@ function RecordView(props) {
     for (const id in players) {
       const player = players[id]
       output.push(
-        <tr key={id}>
-          <td>{player.name}</td>
-          {['1', '2', '3'].map(round => (
-            <td key={`${id}-${round}`}>
+        <StyledDivPlayer key={id}>
+          <StyledDivPlayerHead>
+            <span aria-label="Player name">{player.name}</span>
+            <span aria-label="Total score">
+              {calculateTotal(player.results)} points
+            </span>
+          </StyledDivPlayerHead>
+          <StyledDivRounds>
+            {['1', '2', '3'].map(round => (
               <Input
+                ariaLabel={`Round ${round} score for ${player.name}`}
+                key={`${id}-${round}`}
                 onChange={e => recordResult(id, round, e.target.value)}
                 type="number"
                 value={player.results[round]}
               />
-            </td>
-          ))}
-          <td>{calculateTotal(player.results)}</td>
-        </tr>
+            ))}
+          </StyledDivRounds>
+        </StyledDivPlayer>
       )
     }
     return output
@@ -37,19 +44,10 @@ function RecordView(props) {
     return total
   }
   return (
-    <div>
+    <main>
       <h1>Play!</h1>
-      <table>
-        <tr>
-          <th>Player</th>
-          <th>Round 1</th>
-          <th>Round 2</th>
-          <th>Round 3</th>
-          <th>Total</th>
-        </tr>
-        {renderPlayers()}
-      </table>
-    </div>
+      {renderPlayers()}
+    </main>
   )
 }
 

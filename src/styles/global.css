@@ -8,6 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+*:focus {
   outline-color: #fea612;
 }

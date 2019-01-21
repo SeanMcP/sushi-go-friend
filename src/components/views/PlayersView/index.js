@@ -33,7 +33,7 @@ function PlayersView(props) {
     return output
   }
   return (
-    <div>
+    <main>
       <Input
         help="Start typing, then hit enter to add a player to the game"
         label="Add players"
@@ -56,7 +56,7 @@ function PlayersView(props) {
           Go!
         </Button>
       )}
-    </div>
+    </main>
   )
 }
 

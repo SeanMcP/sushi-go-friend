@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import THEME from 'styles/theme'
 
@@ -25,6 +25,12 @@ export const StyledInput = styled.input`
   outline: 0;
   padding: 1rem;
   transition: border 200ms ease-in-out;
+
+  ${props =>
+    props.maxWidth &&
+    css`
+      max-width: ${props.maxWidth};
+    `}
 
   &:hover,
   &:active,

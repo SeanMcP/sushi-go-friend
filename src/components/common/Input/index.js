@@ -8,7 +8,15 @@ import {
   StyledLabelText
 } from './styled'
 
-function Input({ help, label, onChange, onKeyPress, value = '', ...props }) {
+function Input({
+  ariaLabel,
+  help,
+  label,
+  onChange,
+  onKeyPress,
+  value = '',
+  ...props
+}) {
   const [_value, setValue] = React.useState(value)
 
   function handleOnChange(e) {
@@ -26,17 +34,27 @@ function Input({ help, label, onChange, onKeyPress, value = '', ...props }) {
   }
 
   return (
-    <StyledLabel onKeyPress={handleOnKeyPress} {...props}>
-      <StyledLabelText>{label}</StyledLabelText>
-      <StyledHelpText>{help}</StyledHelpText>
-      <StyledInput value={_value} onChange={handleOnChange} />
+    <StyledLabel onKeyPress={handleOnKeyPress}>
+      {label && <StyledLabelText>{label}</StyledLabelText>}
+      {help && <StyledHelpText>{help}</StyledHelpText>}
+      <StyledInput
+        aria-label={ariaLabel}
+        value={_value}
+        onChange={handleOnChange}
+        {...props}
+      />
     </StyledLabel>
   )
 }
 
 Input.propTypes = {
+  ariaLabel: PropTypes.string,
   help: PropTypes.string,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string
+}
+
+Input.defaultProps = {
+  ariaLabel: null
 }
 
 export default Input

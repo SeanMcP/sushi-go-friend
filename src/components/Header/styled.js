@@ -12,7 +12,6 @@ export const StyledP = styled.p`
 export const StyledHeader = styled.header`
   border-bottom: 2px solid black;
   margin-bottom: 1rem;
-  padding-bottom: 1rem;
 
   &:hover ${StyledP} {
     opacity: 0.5;
