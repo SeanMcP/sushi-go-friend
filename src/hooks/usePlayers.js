@@ -19,7 +19,7 @@ function usePlayers() {
     const playersCopy = { ...players }
     playersCopy[String(new Date().getTime())] = {
       name: value,
-      results: { '1': 0, '2': 0, '3': 0, pudding: undefined }
+      results: { '1': 0, '2': 0, '3': 0, pudding: 0 }
     }
     setPlayers(playersCopy)
   }

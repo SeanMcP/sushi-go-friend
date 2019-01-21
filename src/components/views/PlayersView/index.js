@@ -1,6 +1,6 @@
 import React from 'react'
+import { Link } from '@reach/router'
 
-import Button from 'components/common/Button'
 import IconButton from 'components/common/IconButton'
 import Input from 'components/common/Input'
 import PlayerRow from 'components/common/PlayerRow'
@@ -8,10 +8,7 @@ import PlayerRow from 'components/common/PlayerRow'
 import { StyledUl, StyledDivButtonContainer } from './styled'
 
 function PlayersView(props) {
-  const {
-    View: { navigate },
-    Players: { addPlayer, players, removeAllPlayers, removePlayer }
-  } = props
+  const { addPlayer, players, removeAllPlayers, removePlayer } = props
   function renderPlayers() {
     const output = []
     for (const id in players) {
@@ -52,9 +49,10 @@ function PlayersView(props) {
         </React.Fragment>
       )}
       {Object.keys(players).length > 1 && (
-        <Button onClick={() => navigate('record')} fullWidth>
-          Go!
-        </Button>
+        <Link to="play">Go!</Link>
+        // <Button onClick={() => navigate('record')} fullWidth>
+        //   Go!
+        // </Button>
       )}
     </main>
   )

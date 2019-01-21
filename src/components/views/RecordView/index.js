@@ -5,9 +5,7 @@ import Input from 'components/common/Input'
 import { StyledDivPlayer, StyledDivPlayerHead, StyledDivRounds } from './styled'
 
 function RecordView(props) {
-  const {
-    Players: { players, recordResult }
-  } = props
+  const { players, recordResult } = props
   function renderPlayers() {
     const output = []
     for (const id in players) {
