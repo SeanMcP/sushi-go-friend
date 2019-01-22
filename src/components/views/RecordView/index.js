@@ -1,11 +1,14 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import { Redirect } from '@reach/router'
 
 import Input from 'components/common/Input'
 import { StyledDivPlayer, StyledDivPlayerHead, StyledDivRounds } from './styled'
 
 function RecordView(props) {
   const { players, recordResult } = props
+  if (!Object.keys(players).length) {
+    return <Redirect to="/" noThrow />
+  }
   function renderPlayers() {
     const output = []
     for (const id in players) {
