@@ -6,7 +6,7 @@ import {
   StyledDivPlayer,
   StyledDivPlayerHead,
   StyledDivRounds,
-  StyledH1
+  StyledH2
 } from './styled'
 
 function RecordView(props) {
@@ -51,7 +51,7 @@ function RecordView(props) {
   }
   return (
     <React.Fragment>
-      <StyledH1>Play!</StyledH1>
+      <StyledH2>Play!</StyledH2>
       {renderPlayers()}
     </React.Fragment>
   )

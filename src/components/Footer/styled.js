@@ -9,12 +9,11 @@ export const StyledFooter = styled.footer`
   a,
   a:visited {
     color: black;
-    text-decoration: none;
   }
 
   a:active,
   a:focus,
   a:hover {
-    text-decoration: underline;
+    color: ${props => props.theme.ORANGE};
   }
 `
