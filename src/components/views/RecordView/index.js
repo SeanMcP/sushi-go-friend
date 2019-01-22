@@ -2,7 +2,12 @@ import React from 'react'
 import { Redirect } from '@reach/router'
 
 import Input from 'components/common/Input'
-import { StyledDivPlayer, StyledDivPlayerHead, StyledDivRounds } from './styled'
+import {
+  StyledDivPlayer,
+  StyledDivPlayerHead,
+  StyledDivRounds,
+  StyledH1
+} from './styled'
 
 function RecordView(props) {
   const { players, recordResult } = props
@@ -45,10 +50,10 @@ function RecordView(props) {
     return total
   }
   return (
-    <main>
-      <h1>Play!</h1>
+    <React.Fragment>
+      <StyledH1>Play!</StyledH1>
       {renderPlayers()}
-    </main>
+    </React.Fragment>
   )
 }
 

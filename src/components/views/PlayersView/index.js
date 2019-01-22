@@ -31,7 +31,7 @@ function PlayersView(props) {
   }
   const numberOfPlayers = Object.keys(players).length
   return (
-    <main>
+    <React.Fragment>
       <Input
         help="Start typing, then hit enter to add a player to the game"
         label="Add players"
@@ -50,7 +50,7 @@ function PlayersView(props) {
         </React.Fragment>
       )}
       {numberOfPlayers > 1 && <StyledLink to="play">遊びます!</StyledLink>}
-    </main>
+    </React.Fragment>
   )
 }
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from '@reach/router'
 
 export const StyledP = styled.p`
   font-size: 0.75rem;
@@ -11,11 +12,10 @@ export const StyledP = styled.p`
 
 export const StyledHeader = styled.header`
   border-bottom: 2px solid black;
-  margin-bottom: 1rem;
 
   &:hover ${StyledP} {
     opacity: 0.5;
-    transform: translateY(0);
+    transform: translateY(-0.25rem);
   }
 `
 
@@ -27,4 +27,9 @@ export const StyledH1 = styled.h1`
   @media screen and (max-width: 800px) {
     font-size: 2.25rem;
   }
+`
+
+export const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: none;
 `

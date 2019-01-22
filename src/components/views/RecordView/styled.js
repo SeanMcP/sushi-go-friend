@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const StyledH1 = styled.h1`
+  margin-top: 0;
+`
+
 export const StyledDivPlayer = styled.div`
   display: grid;
   grid-gap: 0.5rem;
