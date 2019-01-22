@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import THEME from 'styles/theme'
-
 export const StyledButton = styled.button`
   align-items: center;
   background: transparent;
@@ -16,6 +14,6 @@ export const StyledButton = styled.button`
   &:hover,
   &:active,
   &:focus {
-    color: ${THEME.ORANGE};
+    color: ${props => props.theme.ORANGE};
   }
 `

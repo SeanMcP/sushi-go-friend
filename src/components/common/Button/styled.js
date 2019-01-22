@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import THEME from 'styles/theme'
-
 export const StyledButton = styled.button`
   background: transparent;
   border: 2px solid black;
@@ -16,7 +14,7 @@ export const StyledButton = styled.button`
   &:active,
   &:focus,
   &:hover {
-    color: ${THEME.ORANGE};
-    border-color: ${THEME.ORANGE};
+    color: ${props => props.theme.ORANGE};
+    border-color: ${props => props.theme.ORANGE};
   }
 `

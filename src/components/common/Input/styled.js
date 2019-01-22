@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import THEME from 'styles/theme'
-
 export const StyledLabel = styled.label`
   display: grid;
   grid-gap: 1rem;
@@ -35,6 +33,6 @@ export const StyledInput = styled.input`
   &:hover,
   &:active,
   &:focus {
-    border-color: ${THEME.ORANGE};
+    border-color: ${props => props.theme.ORANGE};
   }
 `

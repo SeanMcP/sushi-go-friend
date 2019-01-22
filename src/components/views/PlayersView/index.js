@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link } from '@reach/router'
 
 import IconButton from 'components/common/IconButton'
 import Input from 'components/common/Input'
 import PlayerRow from 'components/common/PlayerRow'
 
-import { StyledUl, StyledDivButtonContainer } from './styled'
+import { StyledLink, StyledUl, StyledDivButtonContainer } from './styled'
 
 function PlayersView(props) {
   const { addPlayer, players, removeAllPlayers, removePlayer } = props
@@ -49,10 +48,7 @@ function PlayersView(props) {
         </React.Fragment>
       )}
       {Object.keys(players).length > 1 && (
-        <Link to="play">Go!</Link>
-        // <Button onClick={() => navigate('record')} fullWidth>
-        //   Go!
-        // </Button>
+        <StyledLink to="play">遊びます!</StyledLink>
       )}
     </main>
   )
