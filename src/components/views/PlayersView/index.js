@@ -17,8 +17,9 @@ function PlayersView(props) {
           button={
             <IconButton
               icon={'Delete'}
-              label="Remove"
+              label="Remove player"
               onClick={() => removePlayer(id)}
+              hideLabel
             />
           }
           key={id}
@@ -28,6 +29,7 @@ function PlayersView(props) {
     }
     return output
   }
+  const numberOfPlayers = Object.keys(players).length
   return (
     <main>
       <Input
@@ -35,9 +37,8 @@ function PlayersView(props) {
         label="Add players"
         onKeyPress={e => addPlayer(e.target.value)}
       />
-      {Object.keys(players).length > 0 && (
+      {numberOfPlayers > 0 && (
         <React.Fragment>
-          <StyledUl>{renderPlayers()}</StyledUl>
           <StyledDivButtonContainer>
             <IconButton
               icon={'Trash2'}
@@ -45,11 +46,10 @@ function PlayersView(props) {
               onClick={removeAllPlayers}
             />
           </StyledDivButtonContainer>
+          <StyledUl>{renderPlayers()}</StyledUl>
         </React.Fragment>
       )}
-      {Object.keys(players).length > 1 && (
-        <StyledLink to="play">遊びます!</StyledLink>
-      )}
+      {numberOfPlayers > 1 && <StyledLink to="play">遊びます!</StyledLink>}
     </main>
   )
 }

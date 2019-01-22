@@ -3,13 +3,15 @@ import { Link } from '@reach/router'
 
 export const StyledUl = styled.ul`
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
+  margin-top: 0;
   padding: 0;
 `
 
 export const StyledDivButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 0.5rem;
 `
 
 export const StyledLink = styled(Link)`
