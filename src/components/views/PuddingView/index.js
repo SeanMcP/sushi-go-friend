@@ -1,10 +1,8 @@
 import React from 'react'
-import { Redirect } from '@reach/router'
 
-import Button from 'components/common/Button'
+import BigFunLink from 'components/common/BigFunLink'
 
 function PuddingView(props) {
-  const [displayRedirect, setDisplayRedirect] = React.useState(false)
   const [mostPudding, setMostPudding] = React.useState([])
   const [fewestPudding, setFewestPudding] = React.useState([])
   function renderPlayers(key) {
@@ -49,21 +47,24 @@ function PuddingView(props) {
 
     mostPudding.forEach(id => recordResult(id, 'pudding', pointsForMost))
     fewestPudding.forEach(id => recordResult(id, 'pudding', pointsForFewest))
-
-    setDisplayRedirect(true)
   }
   return (
     <React.Fragment>
-      <h2>Don't forget pudding!</h2>
+      <h2>Now pudding!</h2>
       <h3>Who had the most?</h3>
       {renderPlayers('most')}
       <h3>Who had the fewest?</h3>
       {renderPlayers('fewest')}
       {((mostPudding.length > 0 && fewestPudding.length > 0) ||
         mostPudding.length === Object.keys(props.players).length) && (
-        <Button onClick={countPudding}>Do the math</Button>
+        <BigFunLink
+          onClick={countPudding}
+          to="/results"
+          translation="Do the math!"
+        >
+          計算する!
+        </BigFunLink>
       )}
-      {displayRedirect && <Redirect to="/results" noThrow />}
     </React.Fragment>
   )
 }

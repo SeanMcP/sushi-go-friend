@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from '@reach/router'
 
+import BigFunLink from 'components/common/BigFunLink'
 import { StyledOl, StyledItemContainer } from './styled'
 
 function ResultsView(props) {
@@ -59,7 +59,9 @@ function ResultsView(props) {
     <React.Fragment>
       <h2>And the winner is...</h2>
       {renderPlayers()}
-      <Link to="/play#again">Play again?</Link>
+      <BigFunLink to="/play#again" translation="Play again?">
+        再びプレー?
+      </BigFunLink>
     </React.Fragment>
   )
 }

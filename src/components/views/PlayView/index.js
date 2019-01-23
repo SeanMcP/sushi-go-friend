@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link, Redirect } from '@reach/router'
+import { Redirect } from '@reach/router'
 
+import BigFunLink from 'components/common/BigFunLink'
 import Input from 'components/common/Input'
 import {
   StyledDivPlayer,
@@ -64,7 +65,9 @@ function PlayView(props) {
     <React.Fragment>
       <StyledH2>Play!</StyledH2>
       {renderPlayers()}
-      <Link to="/pudding">Next!</Link>
+      <BigFunLink to="/pudding" translation="Next!">
+        次!
+      </BigFunLink>
     </React.Fragment>
   )
 }

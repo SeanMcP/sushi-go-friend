@@ -4,7 +4,8 @@ import IconButton from 'components/common/IconButton'
 import Input from 'components/common/Input'
 import PlayerRow from 'components/common/PlayerRow'
 
-import { StyledLink, StyledUl, StyledDivButtonContainer } from './styled'
+import { StyledUl, StyledDivButtonContainer } from './styled'
+import BigFunLink from 'components/common/BigFunLink'
 
 function HomeView(props) {
   const { addPlayer, players, removeAllPlayers, removePlayer } = props
@@ -32,6 +33,7 @@ function HomeView(props) {
   const numberOfPlayers = Object.keys(players).length
   return (
     <React.Fragment>
+      <h2>Let's play!</h2>
       <Input
         help="Start typing, then hit enter to add a player to the game"
         label="Add players"
@@ -49,7 +51,11 @@ function HomeView(props) {
           <StyledUl>{renderPlayers()}</StyledUl>
         </React.Fragment>
       )}
-      {numberOfPlayers > 1 && <StyledLink to="play">遊びます!</StyledLink>}
+      {numberOfPlayers > 1 && (
+        <BigFunLink to="play" translation="Play!">
+          遊びます!
+        </BigFunLink>
+      )}
     </React.Fragment>
   )
 }

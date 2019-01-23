@@ -2,17 +2,17 @@ import styled, { css } from 'styled-components'
 
 export const StyledLabel = styled.label`
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
 `
 
 export const StyledLabelText = styled.div`
   font-weight: bold;
-  font-size: 125%;
 `
 
 export const StyledHelpText = styled.div`
   font-style: italic;
   font-size: 0.875rem;
+  opacity: 0.875;
 `
 
 export const StyledInput = styled.input`
