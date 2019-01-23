@@ -12,6 +12,7 @@ export const StyledLabelText = styled.div`
 
 export const StyledHelpText = styled.div`
   font-style: italic;
+  font-size: 0.875rem;
 `
 
 export const StyledInput = styled.input`

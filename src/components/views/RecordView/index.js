@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from '@reach/router'
+import { Link, Redirect } from '@reach/router'
 
 import Input from 'components/common/Input'
 import {
@@ -53,6 +53,7 @@ function RecordView(props) {
     <React.Fragment>
       <StyledH2>Play!</StyledH2>
       {renderPlayers()}
+      <Link to="/score">Score</Link>
     </React.Fragment>
   )
 }

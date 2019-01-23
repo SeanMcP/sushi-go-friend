@@ -15,7 +15,7 @@ export const StyledMain = styled.main`
   padding: 1rem 0;
   overflow-y: auto;
 
-  > *:first-child {
+  > div > *:first-child {
     margin-top: 0;
   }
 `
