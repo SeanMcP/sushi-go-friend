@@ -10,6 +10,7 @@ import usePlayers from 'hooks/usePlayers'
 import PlayersView from '../views/PlayersView'
 import PuddingView from '../views/PuddingView'
 import RecordView from '../views/RecordView'
+import ResultsView from '../views/ResultsView'
 
 import Footer from 'components/Footer'
 import Header from 'components/Header'
@@ -26,6 +27,7 @@ function App() {
             <PlayersView path="/" {...Players} />
             <RecordView path="/play" {...Players} />
             <PuddingView path="/pudding" {...Players} />
+            <ResultsView path="/results" {...Players} />
           </Router>
         </StyledMain>
         <Footer />

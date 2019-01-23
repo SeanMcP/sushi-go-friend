@@ -55,13 +55,9 @@ function PuddingView(props) {
   return (
     <React.Fragment>
       <h2>Don't forget pudding!</h2>
-      <h3>
-        Who had the most? <code>{mostPudding.join(', ').toString()}</code>
-      </h3>
+      <h3>Who had the most?</h3>
       {renderPlayers('most')}
-      <h3>
-        Who had the fewest? <code>{fewestPudding.join(', ').toString()}</code>
-      </h3>
+      <h3>Who had the fewest?</h3>
       {renderPlayers('fewest')}
       {mostPudding.length > 0 && fewestPudding.length > 0 && (
         <Button onClick={countPudding}>Do the math</Button>

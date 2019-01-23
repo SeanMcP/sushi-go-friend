@@ -53,7 +53,7 @@ function RecordView(props) {
     <React.Fragment>
       <StyledH2>Play!</StyledH2>
       {renderPlayers()}
-      <Link to="/score">Score</Link>
+      <Link to="/pudding">Next!</Link>
     </React.Fragment>
   )
 }
