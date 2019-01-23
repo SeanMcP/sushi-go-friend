@@ -6,7 +6,7 @@ import PlayerRow from 'components/common/PlayerRow'
 
 import { StyledLink, StyledUl, StyledDivButtonContainer } from './styled'
 
-function PlayersView(props) {
+function HomeView(props) {
   const { addPlayer, players, removeAllPlayers, removePlayer } = props
   function renderPlayers() {
     const output = []
@@ -54,4 +54,4 @@ function PlayersView(props) {
   )
 }
 
-export default PlayersView
+export default HomeView

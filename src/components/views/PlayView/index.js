@@ -9,7 +9,7 @@ import {
   StyledH2
 } from './styled'
 
-function RecordView(props) {
+function PlayView(props) {
   const { players, recordResult } = props
   if (!Object.keys(players).length) {
     return <Redirect to="/" noThrow />
@@ -58,4 +58,4 @@ function RecordView(props) {
   )
 }
 
-export default RecordView
+export default PlayView
