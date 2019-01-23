@@ -59,7 +59,8 @@ function PuddingView(props) {
       {renderPlayers('most')}
       <h3>Who had the fewest?</h3>
       {renderPlayers('fewest')}
-      {mostPudding.length > 0 && fewestPudding.length > 0 && (
+      {((mostPudding.length > 0 && fewestPudding.length > 0) ||
+        mostPudding.length === Object.keys(props.players).length) && (
         <Button onClick={countPudding}>Do the math</Button>
       )}
       {displayRedirect && <Redirect to="/results" noThrow />}

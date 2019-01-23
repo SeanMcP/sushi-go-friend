@@ -10,10 +10,21 @@ import {
 } from './styled'
 
 function PlayView(props) {
-  const { players, recordResult } = props
+  const {
+    location: { hash },
+    players,
+    recordResult,
+    resetResults
+  } = props
   if (!Object.keys(players).length) {
     return <Redirect to="/" noThrow />
   }
+  React.useEffect(() => {
+    if (hash === '#again') {
+      resetResults()
+      props.navigate('/play')
+    }
+  })
   function renderPlayers() {
     const output = []
     for (const id in players) {

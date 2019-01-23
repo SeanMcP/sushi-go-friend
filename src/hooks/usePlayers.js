@@ -1,17 +1,18 @@
 import React from 'react'
 
+// const defaultState = {}
+const defaultResults = { '1': 0, '2': 0, '3': 0, pudding: 0 }
 // Just for dev purposes
 const defaultState = {
   1: {
     name: 'Sean',
-    results: { '1': 0, '2': 0, '3': 0, pudding: 0 }
+    results: { ...defaultResults }
   },
   2: {
     name: 'Anne',
-    results: { '1': 0, '2': 0, '3': 0, pudding: 0 }
+    results: { ...defaultResults }
   }
 }
-// const defaultState = {}
 
 function usePlayers() {
   const [players, setPlayers] = React.useState(defaultState)
@@ -19,7 +20,7 @@ function usePlayers() {
     const playersCopy = { ...players }
     playersCopy[String(new Date().getTime())] = {
       name: value,
-      results: { '1': 0, '2': 0, '3': 0, pudding: 0 }
+      results: { ...defaultResults }
     }
     setPlayers(playersCopy)
   }
@@ -38,13 +39,22 @@ function usePlayers() {
   function removeAllPlayers() {
     setPlayers({})
   }
+  function resetResults(toReturn) {
+    const playersCopy = { ...players }
+    for (const id in playersCopy) {
+      playersCopy[id].results = { ...defaultResults }
+    }
+    setPlayers(playersCopy)
+    return toReturn
+  }
   return {
     players,
     setPlayers,
     addPlayer,
     recordResult,
     removePlayer,
-    removeAllPlayers
+    removeAllPlayers,
+    resetResults
   }
 }
 

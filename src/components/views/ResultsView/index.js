@@ -59,7 +59,7 @@ function ResultsView(props) {
     <React.Fragment>
       <h2>And the winner is...</h2>
       {renderPlayers()}
-      <Link to="/">Play again?</Link>
+      <Link to="/play#again">Play again?</Link>
     </React.Fragment>
   )
 }
