@@ -5,8 +5,8 @@ import { StyledLink } from './styled'
 function BigFunLink({ children, translation, ...props }) {
   return (
     <StyledLink {...props}>
-      <span>{children}</span>
-      {translation && <span>{translation}</span>}
+      <span aria-label={translation}>{children}</span>
+      <span>{translation}</span>
     </StyledLink>
   )
 }

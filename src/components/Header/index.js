@@ -7,8 +7,8 @@ function Header() {
     <StyledHeader>
       <StyledH1>
         <StyledLink to="/">
-          <span>寿司行く友人</span>
-          <span>Sushi Go Friend</span>
+          <span aria-labelledby="header-translation">寿司行く友人</span>
+          <span id="header-translation">Sushi Go Friend</span>
         </StyledLink>
       </StyledH1>
     </StyledHeader>

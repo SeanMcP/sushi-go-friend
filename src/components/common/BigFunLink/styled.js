@@ -39,6 +39,8 @@ export const StyledLink = styled(Link)`
   }
 
   @media screen and (max-width: ${props => props.theme.MOBILE}) {
+    font-size: 1.5rem;
+
     span {
       display: block;
     }
