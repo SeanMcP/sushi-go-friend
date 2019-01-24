@@ -1,6 +1,7 @@
 import React from 'react'
 
 import BigFunLink from 'components/common/BigFunLink'
+import { StyledH3, StyledLabel, StyledUl } from './styled'
 
 function PuddingView(props) {
   const [mostPudding, setMostPudding] = React.useState([])
@@ -12,24 +13,24 @@ function PuddingView(props) {
       const player = players[id]
       output.push(
         <li key={id}>
-          <label>
+          <StyledLabel>
             <input
               type="checkbox"
-              name=""
-              id={id}
-              onChange={setPuddingValue(key)}
+              name={`${id}-${key}`}
+              id={`${id}-${key}`}
+              onChange={setPuddingValue(key, id)}
             />{' '}
             <span>{player.name}</span>
-          </label>
+          </StyledLabel>
         </li>
       )
     }
-    return <ul>{output}</ul>
+    return <StyledUl>{output}</StyledUl>
   }
-  function setPuddingValue(key) {
+  function setPuddingValue(key, id) {
     const state = key === 'most' ? mostPudding : fewestPudding
     const setState = key === 'most' ? setMostPudding : setFewestPudding
-    return ({ target: { checked, id } }) => {
+    return ({ target: { checked } }) => {
       const copy = [...state]
       if (checked) {
         copy.push(id)
@@ -51,9 +52,9 @@ function PuddingView(props) {
   return (
     <React.Fragment>
       <h2>Now pudding!</h2>
-      <h3>Who had the most?</h3>
+      <StyledH3>Who had the most?</StyledH3>
       {renderPlayers('most')}
-      <h3>Who had the fewest?</h3>
+      <StyledH3>Who had the fewest?</StyledH3>
       {renderPlayers('fewest')}
       {((mostPudding.length > 0 && fewestPudding.length > 0) ||
         mostPudding.length === Object.keys(props.players).length) && (
