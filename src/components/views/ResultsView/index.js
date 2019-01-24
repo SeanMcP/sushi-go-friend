@@ -1,10 +1,14 @@
 import React from 'react'
+import { Redirect } from '@reach/router'
 
 import BigFunLink from 'components/common/BigFunLink'
 import { StyledLi, StyledOl, StyledItemContainer } from './styled'
 
 function ResultsView(props) {
   const { players } = props
+  if (!Object.keys(players).length) {
+    return <Redirect to="/" noThrow />
+  }
   function rankPlayers() {
     const output = []
     for (const id in players) {
