@@ -1,22 +1,9 @@
 import styled from 'styled-components'
 import { Link } from '@reach/router'
 
-export const StyledP = styled.p`
-  font-size: 0.75rem;
-  margin: 0;
-  opacity: 0;
-  text-align: center;
-  transform: translateY(-1rem);
-  transition: all 200ms ease-in-out;
-`
-
 export const StyledHeader = styled.header`
-  border-bottom: 2px solid black;
-
-  &:hover ${StyledP} {
-    opacity: 0.5;
-    transform: translateY(-0.25rem);
-  }
+  background: ${props => props.theme.RED};
+  padding: 1rem 0;
 `
 
 export const StyledH1 = styled.h1`
@@ -24,12 +11,34 @@ export const StyledH1 = styled.h1`
   margin: 0;
   text-align: center;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (min-width: ${props => props.theme.MOBILE}) {
+    span:last-of-type {
+      display: none;
+    }
+
+    &:hover {
+      span:first-of-type {
+        display: none;
+      }
+      span:last-of-type {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: ${props => props.theme.MOBILE}) {
     font-size: 2.25rem;
+
+    span:last-of-type {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      padding-top: 0.25rem;
+    }
   }
 `
 
 export const StyledLink = styled(Link)`
-  color: black;
+  color: white;
   text-decoration: none;
 `

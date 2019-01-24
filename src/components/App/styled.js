@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 
 export const StyledDiv = styled.div`
-  background: ${props => props.theme.RED};
-  border: 1rem solid black;
   display: flex;
   flex-direction: column;
-  max-height: calc(100vh - 5rem);
-  min-height: calc(100vh - 5rem);
-  padding: 2rem 2rem 1rem;
+  max-height: 100vh;
+  min-height: 100vh;
 `
 
 export const StyledMain = styled.main`
   flex: 1;
-  padding: 1rem 0;
+  padding: 2rem 0;
   overflow-y: auto;
+  margin: 0 auto;
+  max-width: 40rem;
+  width: 100%;
+
+  > div {
+    margin: 0 1rem;
+  }
 
   > div > *:first-child {
     margin-top: 0;

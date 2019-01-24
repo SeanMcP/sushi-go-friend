@@ -1,14 +1,16 @@
 import React from 'react'
 
-import { StyledHeader, StyledH1, StyledLink, StyledP } from './styled'
+import { StyledHeader, StyledH1, StyledLink } from './styled'
 
 function Header() {
   return (
     <StyledHeader>
       <StyledH1>
-        <StyledLink to="/">寿司行く友人</StyledLink>
+        <StyledLink to="/">
+          <span>寿司行く友人</span>
+          <span>Sushi Go Friend</span>
+        </StyledLink>
       </StyledH1>
-      <StyledP>Sushi Go Friend</StyledP>
     </StyledHeader>
   )
 }
