@@ -1,24 +1,24 @@
 import React from 'react'
 
 import BigFunLink from 'components/common/BigFunLink'
-import { StyledOl, StyledItemContainer } from './styled'
+import { StyledLi, StyledOl, StyledItemContainer } from './styled'
 
 function ResultsView(props) {
   const { players } = props
   function rankPlayers() {
-    const _array = []
+    const output = []
     for (const id in players) {
       const player = players[id]
-      _array.push({
+      output.push({
         name: player.name,
         total: totalResults(player.results),
         id
       })
     }
-    _array.sort((current, previous) =>
+    output.sort((current, previous) =>
       current.total > previous.total ? -1 : 1
     )
-    return _array
+    return output
   }
   function totalResults(results) {
     let total = 0
@@ -32,28 +32,15 @@ function ResultsView(props) {
     return (
       <StyledOl>
         {rankedPlayers.map((player, index) => (
-          <li key={player.id}>
+          <StyledLi key={player.id} first={index === 0}>
             <StyledItemContainer>
-              <span>
-                {renderAward(index)}
-                {player.name}
-              </span>
+              <span>{player.name}</span>
               <span>{player.total} pts</span>
             </StyledItemContainer>
-          </li>
+          </StyledLi>
         ))}
       </StyledOl>
     )
-  }
-  function renderAward(index) {
-    const hash = {
-      0: '🥇',
-      1: '🥈',
-      2: '🥉'
-    }
-    if (hash[index]) {
-      return <span>{hash[index]}</span>
-    }
   }
   return (
     <React.Fragment>
