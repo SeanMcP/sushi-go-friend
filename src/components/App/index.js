@@ -2,7 +2,7 @@ import React from 'react'
 import { Router } from '@reach/router'
 import { ThemeProvider } from 'styled-components'
 
-import THEME from 'styles/theme'
+import { GlobalStyle, THEME } from 'styles/theme'
 import { StyledDiv, StyledMain } from './styled'
 
 import usePlayers from 'hooks/usePlayers'
@@ -21,6 +21,7 @@ function App() {
   return (
     <ThemeProvider theme={THEME}>
       <StyledDiv>
+        <GlobalStyle />
         <Header />
         <StyledMain>
           <Router>

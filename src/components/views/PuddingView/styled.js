@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledH3 = styled.h3`
-  border-bottom: 2px solid black;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 `
 
 export const StyledUl = styled.ul`
