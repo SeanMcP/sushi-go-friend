@@ -12,17 +12,17 @@ export const StyledLabelText = styled.div`
 export const StyledHelpText = styled.div`
   font-style: italic;
   font-size: 0.875rem;
-  opacity: 0.875;
 `
 
 export const StyledInput = styled.input`
-  background: rgba(0, 0, 0, 0.0625);
+  background: white;
   border: 0;
-  border-bottom: 2px solid black;
+  border-radius: 0.5rem;
   font-family: inherit;
   font-size: inherit;
   outline: 0;
   padding: 1rem;
+  text-align: center;
   transition: border 200ms ease-in-out;
 
   ${props =>
@@ -31,9 +31,7 @@ export const StyledInput = styled.input`
       max-width: ${props.maxWidth};
     `}
 
-  &:hover,
-  &:active,
   &:focus {
-    border-color: ${props => props.theme.ORANGE};
+    box-shadow: 0 0 0 4px ${props => props.theme.ORANGE};
   }
 `

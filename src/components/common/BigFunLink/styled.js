@@ -3,9 +3,9 @@ import { Link } from '@reach/router'
 
 export const StyledLink = styled(Link)`
   background: transparent;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 0.5rem;
-  color: black;
+  color: white;
   display: block;
   font-size: 2rem;
   margin: 2rem auto 0;
@@ -18,8 +18,8 @@ export const StyledLink = styled(Link)`
   &:active,
   &:focus {
     background: ${props => props.theme.ORANGE};
-    border-color: black;
-    color: black;
+    border-color: ${props => props.theme.ORANGE};
+    color: ${props => props.theme.RED};
   }
 
   @media screen and (min-width: ${props => props.theme.MOBILE}) {
@@ -44,7 +44,6 @@ export const StyledLink = styled(Link)`
     }
     span:last-of-type {
       font-size: 1rem;
-      opacity: 0.5;
       padding-top: 0.25rem;
       text-align: center;
     }

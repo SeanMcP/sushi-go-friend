@@ -2,8 +2,9 @@ import styled from 'styled-components'
 import { Link } from '@reach/router'
 
 export const StyledHeader = styled.header`
-  background: ${props => props.theme.RED};
+  box-shadow: 0 0 2rem ${props => props.theme.RED};
   padding: 1rem 0;
+  z-index: 1;
 `
 
 export const StyledH1 = styled.h1`

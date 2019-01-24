@@ -37,6 +37,7 @@ function HomeView(props) {
       <Input
         help="Start typing, then hit enter to add a player to the game"
         label="Add players"
+        placeholder="Who's playing?"
         onKeyPress={e => addPlayer(e.target.value)}
       />
       {numberOfPlayers > 0 && (

@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 
 export const StyledFooter = styled.footer`
-  border-top: 2px solid black;
+  box-shadow: 0 0 2rem ${props => props.theme.RED};
   font-size: 0.75rem;
-  padding-top: 0.75rem;
+  padding: 1rem 0;
   text-align: center;
+  z-index: 1;
 
   a,
   a:visited {
-    color: black;
+    color: white;
   }
 
   a:active,

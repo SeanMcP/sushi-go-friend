@@ -4,6 +4,7 @@ export const StyledButton = styled.button`
   align-items: center;
   background: transparent;
   border: 0;
+  color: white;
   cursor: pointer;
   display: flex;
   flex-direction: column;

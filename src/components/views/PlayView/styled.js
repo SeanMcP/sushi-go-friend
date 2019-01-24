@@ -23,7 +23,6 @@ export const StyledDivRounds = styled.div`
 
   input {
     padding: 0.5rem 0;
-    text-align: center;
     width: 100%;
   }
 `
