@@ -1,18 +1,18 @@
 import React from 'react'
 
-// const defaultState = {}
+const defaultState = {}
 const defaultResults = { '1': 0, '2': 0, '3': 0, pudding: 0 }
 // Just for dev purposes
-const defaultState = {
-  1: {
-    name: 'Sean',
-    results: { ...defaultResults }
-  },
-  2: {
-    name: 'Anne',
-    results: { ...defaultResults }
-  }
-}
+// const defaultState = {
+//   1: {
+//     name: 'Sean',
+//     results: { ...defaultResults }
+//   },
+//   2: {
+//     name: 'Anne',
+//     results: { ...defaultResults }
+//   }
+// }
 
 function usePlayers() {
   const [players, setPlayers] = React.useState(defaultState)
