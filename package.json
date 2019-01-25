@@ -3,7 +3,6 @@
   "author": "Sean McPherson",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://seanmcp.github.io/sushi-go-friend/",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "react": "16.7.0-alpha.2",
@@ -18,9 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier 'src/**/*.{js,jsx}' --write",
-    "fix:dependencies": "rm -rf node_modules/ yarn.lock && yarn",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "fix:dependencies": "rm -rf node_modules/ yarn.lock && yarn"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,7 +40,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1",
     "husky": "^1.3.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.16.1"
