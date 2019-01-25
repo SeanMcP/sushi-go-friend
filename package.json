@@ -3,7 +3,7 @@
   "author": "Sean McPherson",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://seanmcp.github.io/sushi-go-friend",
+  "homepage": "http://seanmcp.github.io/sushi-go-friend/",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "react": "^16.7.0-alpha.2",
