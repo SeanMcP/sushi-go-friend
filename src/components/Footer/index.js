@@ -1,29 +1,21 @@
 import React from 'react'
 
+import ExternalLink from 'components/common/ExternalLink'
 import { StyledFooter } from './styled'
 
 function Footer() {
   return (
     <StyledFooter>
       <p>
-        <a
-          href="https://gamewright.com/product/Sushi-Go"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ExternalLink to="https://gamewright.com/product/Sushi-Go">
           Sushi Go!®
-        </a>{' '}
+        </ExternalLink>{' '}
         is a registered trademark of{' '}
-        <a
-          href="https://gamewright.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GAMEWRIGHT
-        </a>
+        <ExternalLink to="https://gamewright.com/">GAMEWRIGHT</ExternalLink>
       </p>
       <p>
-        Made by <a href="https://github.com/seanmcp">SeanMcP</a>
+        Made by{' '}
+        <ExternalLink to="https://github.com/seanmcp">SeanMcP</ExternalLink>
       </p>
     </StyledFooter>
   )

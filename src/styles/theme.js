@@ -25,4 +25,12 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 4px ${props => props.theme.ORANGE};
     outline: 0;
   }
+
+  a, a:hover, a:active, a:visited {
+    color: white;
+  }
+  
+  a:hover, a:active {
+    color: ${props => props.theme.ORANGE};
+  }
 `

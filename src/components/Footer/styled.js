@@ -10,15 +10,4 @@ export const StyledFooter = styled.footer`
   p {
     margin: 0 1rem;
   }
-
-  a,
-  a:visited {
-    color: white;
-  }
-
-  a:active,
-  a:focus,
-  a:hover {
-    color: ${props => props.theme.ORANGE};
-  }
 `
