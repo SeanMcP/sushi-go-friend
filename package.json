@@ -6,8 +6,8 @@
   "homepage": "http://seanmcp.github.io/sushi-go-friend/",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
     "react-feather": "^1.1.5",
     "react-scripts": "2.1.1",
     "styled-components": "^4.1.3"
