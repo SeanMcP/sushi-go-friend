@@ -6,7 +6,7 @@ import { StyledH3, StyledLabel, StyledUl } from './styled'
 
 function PuddingView(props) {
   if (!Object.keys(props.players).length) {
-    return <Redirect to="/" noThrow />
+    return <Redirect to="/setup" noThrow />
   }
   const [mostPudding, setMostPudding] = React.useState([])
   const [fewestPudding, setFewestPudding] = React.useState([])
@@ -55,7 +55,7 @@ function PuddingView(props) {
   }
   return (
     <React.Fragment>
-      <h2>Don't forget pudding!</h2>
+      <h2>Pudding!</h2>
       <StyledH3>Who had the most?</StyledH3>
       {renderPlayers('most')}
       <StyledH3>Who had the fewest?</StyledH3>

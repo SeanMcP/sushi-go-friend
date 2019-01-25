@@ -33,4 +33,6 @@ export const GlobalStyle = createGlobalStyle`
   a:hover, a:active {
     color: ${props => props.theme.ORANGE};
   }
+
+  p { line-height: 150% }
 `

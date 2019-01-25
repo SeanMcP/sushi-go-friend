@@ -7,7 +7,7 @@ import { StyledLi, StyledOl, StyledItemContainer } from './styled'
 function ResultsView(props) {
   const { players } = props
   if (!Object.keys(players).length) {
-    return <Redirect to="/" noThrow />
+    return <Redirect to="/setup" noThrow />
   }
   function rankPlayers() {
     const output = []

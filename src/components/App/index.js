@@ -7,6 +7,7 @@ import { StyledDiv, StyledMain } from './styled'
 
 import usePlayers from 'hooks/usePlayers'
 
+import SetupView from '../views/SetupView'
 import HomeView from '../views/HomeView'
 import PuddingView from '../views/PuddingView'
 import PlayView from '../views/PlayView'
@@ -26,6 +27,7 @@ function App() {
         <StyledMain>
           <Router>
             <HomeView path="/" {...Players} />
+            <SetupView path="/setup" {...Players} />
             <PlayView path="/play" {...Players} />
             <PuddingView path="/pudding" {...Players} />
             <ResultsView path="/results" {...Players} />

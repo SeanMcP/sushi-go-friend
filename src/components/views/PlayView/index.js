@@ -18,7 +18,7 @@ function PlayView({
   ...props
 }) {
   if (!Object.keys(players).length) {
-    return <Redirect to="/" noThrow />
+    return <Redirect to="/setup" noThrow />
   }
   React.useEffect(() => {
     if (hash === '#again') {
