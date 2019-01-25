@@ -18,6 +18,9 @@ function Input({
   ...props
 }) {
   const [_value, setValue] = React.useState(value)
+  React.useEffect(() => {
+    setValue(value)
+  }, [value])
 
   function handleOnChange(e) {
     if (onChange) {

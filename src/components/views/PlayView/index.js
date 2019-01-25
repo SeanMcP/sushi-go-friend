@@ -10,13 +10,13 @@ import {
   StyledH2
 } from './styled'
 
-function PlayView(props) {
-  const {
-    location: { hash },
-    players,
-    recordResult,
-    resetResults
-  } = props
+function PlayView({
+  location: { hash },
+  players,
+  recordResult,
+  resetResults,
+  ...props
+}) {
   if (!Object.keys(players).length) {
     return <Redirect to="/" noThrow />
   }
