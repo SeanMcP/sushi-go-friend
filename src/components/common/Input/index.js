@@ -44,6 +44,7 @@ function Input({
         aria-label={ariaLabel}
         value={_value}
         onChange={handleOnChange}
+        onFocus={e => e.target.select()}
         {...props}
       />
     </StyledLabel>
