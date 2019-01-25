@@ -10,14 +10,12 @@ export const StyledDiv = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  max-height: 100vh;
   min-height: 100vh;
 `
 
 export const StyledMain = styled.main`
   flex: 1;
   padding: 1rem 0;
-  overflow-y: auto;
   margin: 0 auto;
   max-width: 40rem;
   width: 100%;
