@@ -4,9 +4,8 @@ import { Redirect } from '@reach/router'
 import BigFunLink from 'components/common/BigFunLink'
 import { StyledLi, StyledOl, StyledItemContainer } from './styled'
 
-function ResultsView(props) {
-  const { players } = props
-  if (!Object.keys(players).length) {
+function ResultsView({ hasPlayers, players }) {
+  if (!hasPlayers) {
     return <Redirect to="/setup" noThrow />
   }
   function rankPlayers() {

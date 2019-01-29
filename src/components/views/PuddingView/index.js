@@ -4,14 +4,13 @@ import { Redirect } from '@reach/router'
 import BigFunLink from 'components/common/BigFunLink'
 import { StyledH3, StyledLabel, StyledUl } from './styled'
 
-function PuddingView(props) {
-  if (!Object.keys(props.players).length) {
+function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
+  if (!hasPlayers) {
     return <Redirect to="/setup" noThrow />
   }
   const [mostPudding, setMostPudding] = React.useState([])
   const [fewestPudding, setFewestPudding] = React.useState([])
   function renderPlayers(key) {
-    const { players } = props
     const output = []
     for (const id in players) {
       const player = players[id]
@@ -48,8 +47,6 @@ function PuddingView(props) {
     const pointsForMost = 6 / mostPudding.length
     const pointsForFewest = -6 / fewestPudding.length
 
-    const { recordResult } = props
-
     mostPudding.forEach(id => recordResult(id, 'pudding', pointsForMost))
     fewestPudding.forEach(id => recordResult(id, 'pudding', pointsForFewest))
   }
@@ -61,7 +58,7 @@ function PuddingView(props) {
       <StyledH3>Who had the fewest?</StyledH3>
       {renderPlayers('fewest')}
       {((mostPudding.length > 0 && fewestPudding.length > 0) ||
-        mostPudding.length === Object.keys(props.players).length) && (
+        mostPudding.length === numberOfPlayers) && (
         <BigFunLink
           onClick={countPudding}
           to="/results"

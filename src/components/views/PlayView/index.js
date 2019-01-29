@@ -8,18 +8,19 @@ import { StyledDiv, StyledH2 } from './styled'
 
 function PlayView({
   location: { hash },
+  hasPlayers,
+  navigate,
   players,
   recordResult,
-  resetResults,
-  ...props
+  resetResults
 }) {
-  if (!Object.keys(players).length) {
+  if (!hasPlayers) {
     return <Redirect to="/setup" noThrow />
   }
   React.useEffect(() => {
     if (hash === '#again') {
       resetResults()
-      props.navigate('/play')
+      navigate('/play')
     }
   })
   return (

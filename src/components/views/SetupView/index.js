@@ -7,8 +7,14 @@ import PlayerRow from 'components/common/PlayerRow'
 import { StyledUl, StyledDivButtonContainer } from './styled'
 import BigFunLink from 'components/common/BigFunLink'
 
-function SetupView(props) {
-  const { addPlayer, players, removeAllPlayers, removePlayer } = props
+function SetupView({
+  addPlayer,
+  hasPlayers,
+  numberOfPlayers,
+  players,
+  removeAllPlayers,
+  removePlayer
+}) {
   function renderPlayers() {
     const output = []
     for (const id in players) {
@@ -30,7 +36,6 @@ function SetupView(props) {
     }
     return output
   }
-  const numberOfPlayers = Object.keys(players).length
   return (
     <React.Fragment>
       <h2>Setup!</h2>
@@ -40,7 +45,7 @@ function SetupView(props) {
         placeholder="Who's playing?"
         onKeyPress={e => addPlayer(e.target.value)}
       />
-      {numberOfPlayers > 0 && (
+      {hasPlayers && (
         <React.Fragment>
           <StyledDivButtonContainer>
             <IconButton
