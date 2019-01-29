@@ -5,7 +5,7 @@ import { StyledLi, StyledSpan } from './styled'
 
 const PlayerRow = ({ button, name }) => {
   return (
-    <StyledLi tabIndex={0}>
+    <StyledLi>
       <StyledSpan>{name}</StyledSpan>
       {button}
     </StyledLi>

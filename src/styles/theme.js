@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  *:focus {
+  a:focus, button:focus, input:focus {
     box-shadow: 0 0 0 4px ${props => props.theme.ORANGE};
     outline: 0;
   }
