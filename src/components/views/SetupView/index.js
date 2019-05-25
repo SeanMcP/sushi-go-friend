@@ -1,11 +1,10 @@
 import React from 'react'
 
-import IconButton from 'components/common/IconButton'
-import Input from 'components/common/Input'
-import PlayerRow from 'components/common/PlayerRow'
-
-import { StyledUl, StyledDivButtonContainer } from './styled'
 import BigFunLink from 'components/common/BigFunLink'
+import IconButton from 'components/common/IconButton'
+import PlayerRow from 'components/common/PlayerRow'
+import * as Form from 'components/form'
+import * as S from './styled'
 
 function SetupView({
   addPlayer,
@@ -15,6 +14,7 @@ function SetupView({
   removeAllPlayers,
   removePlayer
 }) {
+  const inputRef = React.createRef()
   function renderPlayers() {
     const output = []
     for (const id in players) {
@@ -36,28 +36,57 @@ function SetupView({
     }
     return output
   }
+  function handleSubmit(e) {
+    e.preventDefault()
+    const data = new FormData(e.target)
+    const name = data.get('name')
+    if (name) {
+      addPlayer(name)
+      e.target.reset()
+    }
+    inputRef.current.focus()
+  }
   return (
     <React.Fragment>
       <h2>Setup!</h2>
-      <Input
-        help="Start typing, then hit enter to add a player to the game"
-        label="Add players"
-        placeholder="Who's playing?"
-        onKeyPress={e => addPlayer(e.target.value)}
-      />
+      <form onSubmit={handleSubmit}>
+        <Form.Label htmlFor="player_input">Add players</Form.Label>
+        <Form.Description id="player_input_help">
+          Add 2-5 players to start playing
+        </Form.Description>
+        <S.InputButtonContainer>
+          <Form.UncontrolledInput
+            aria-describedby="player_input_help"
+            id="player_input"
+            name="name"
+            placeholder="Who's playing?"
+            ref={inputRef}
+            type="text"
+          />
+          <IconButton
+            label="Add player"
+            icon="Plus"
+            type="submit"
+            alternate
+            hideLabel
+          >
+            Add
+          </IconButton>
+        </S.InputButtonContainer>
+      </form>
       {hasPlayers && (
         <React.Fragment>
-          <StyledDivButtonContainer>
+          <S.ButtonContainer>
             <IconButton
               icon={'Trash2'}
               label="Remove all"
               onClick={removeAllPlayers}
             />
-          </StyledDivButtonContainer>
-          <StyledUl>{renderPlayers()}</StyledUl>
+          </S.ButtonContainer>
+          <S.Ul>{renderPlayers()}</S.Ul>
         </React.Fragment>
       )}
-      {numberOfPlayers > 1 && (
+      {numberOfPlayers > 1 && numberOfPlayers < 6 && (
         <BigFunLink to="/play" translation="Play!">
           遊びます!
         </BigFunLink>
