@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const StyledButton = styled.button`
   align-items: center;
@@ -6,15 +6,30 @@ export const StyledButton = styled.button`
   border: 0;
   color: white;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: center;
   padding: 0.25rem;
-  transition: color 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
 
   &:hover,
   &:active,
   &:focus {
     color: ${props => props.theme.ORANGE};
   }
+
+  ${p =>
+    p.alternate &&
+    css`
+      background: ${p.theme.ORANGE};
+      border-radius: 0.5rem;
+      color: ${p.theme.RED};
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: white;
+        color: ${p.theme.RED};
+      }
+    `}
 `

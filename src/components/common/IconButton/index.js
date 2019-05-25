@@ -5,14 +5,14 @@ import Icon from 'components/common/Icon'
 
 import { StyledButton } from './styled'
 
-function IconButton({ hideLabel, icon, label, onClick, ...props }) {
+function IconButton({ alternate = false, hideLabel, icon, label, ...props }) {
   return (
     <StyledButton
-      type="button"
-      onClick={onClick}
+      {...props}
       aria-label={hideLabel ? label : null}
+      alternate={alternate}
     >
-      <Icon icon={icon} {...props} />
+      <Icon icon={icon} />
       {!hideLabel && <span>{label}</span>}
     </StyledButton>
   )
@@ -21,7 +21,11 @@ function IconButton({ hideLabel, icon, label, onClick, ...props }) {
 IconButton.propTypes = {
   label: PropTypes.string.isRequired,
   hideLabel: PropTypes.bool,
-  onClick: PropTypes.func.isRequired
+  icon: PropTypes.string.isRequired
+}
+
+IconButton.defaultProps = {
+  type: 'button'
 }
 
 export default IconButton
