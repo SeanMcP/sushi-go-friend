@@ -51,8 +51,7 @@ function SetupView({
     inputRef.current.focus()
   }
   return (
-    <View>
-      <h2>Setup!</h2>
+    <View heading="Setup">
       <form onSubmit={handleSubmit}>
         <Form.Label htmlFor="player_input">Add players</Form.Label>
         <Form.Description id="player_input_help">

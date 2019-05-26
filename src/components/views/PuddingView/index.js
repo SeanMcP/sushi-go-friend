@@ -6,7 +6,7 @@ import View from 'components/View/View'
 
 import ROUTES from 'constants/routes'
 
-import { StyledH3, StyledLabel, StyledUl } from './styled'
+import { H2, StyledLabel, StyledUl } from './styled'
 
 function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
   if (!hasPlayers) {
@@ -55,11 +55,10 @@ function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
     fewestPudding.forEach(id => recordResult(id, 'pudding', pointsForFewest))
   }
   return (
-    <View>
-      <h2>Pudding!</h2>
-      <StyledH3>Who had the most?</StyledH3>
+    <View heading="Pudding">
+      <H2>Who had the most?</H2>
       {renderPlayers('most')}
-      <StyledH3>Who had the fewest?</StyledH3>
+      <H2>Who had the fewest?</H2>
       {renderPlayers('fewest')}
       {((mostPudding.length > 0 && fewestPudding.length > 0) ||
         mostPudding.length === numberOfPlayers) && (

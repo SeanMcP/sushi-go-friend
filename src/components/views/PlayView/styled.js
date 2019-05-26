@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
-export const StyledDiv = styled.div`
+export const HeaderContainer = styled.header`
   align-items: center;
   display: flex;
   justify-content: space-between;
 `
 
-export const StyledH2 = styled.h2`
+export const H1 = styled.h1`
   margin-top: 0;
 `

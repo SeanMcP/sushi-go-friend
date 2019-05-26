@@ -9,8 +9,7 @@ import ROUTES from 'constants/routes'
 
 function HomeView() {
   return (
-    <View>
-      <h2>Hi, I'm Sushi Go Friend!</h2>
+    <View heading="Let's play">
       <p>
         I'm a simple companion app for{' '}
         <ExternalLink to="https://gamewright.com/product/Sushi-Go">
@@ -20,8 +19,8 @@ function HomeView() {
         <ExternalLink to="https://gamewright.com/">GAMEWRIGHT</ExternalLink>.
       </p>
       <Message>
-        You need the card game to use this app. If you don't have it, you can
-        buy it from{' '}
+        <b>You need the card game to use this app</b>. If you don't have it, you
+        can buy it from{' '}
         <ExternalLink to="https://gamewright.shptron.com/p/sushi-go?pp=8">
           GAMEWRIGHT
         </ExternalLink>{' '}

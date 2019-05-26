@@ -7,7 +7,7 @@ import RedirectToSetup from 'components/common/RedirectToSetup/RedirectToSetup'
 import View from 'components/View/View'
 import ROUTES from 'constants/routes'
 
-import { StyledDiv, StyledH2 } from './styled'
+import * as S from './styled'
 
 function PlayView({
   location: { hash },
@@ -27,11 +27,14 @@ function PlayView({
     }
   })
   return (
-    <View>
-      <StyledDiv>
-        <StyledH2>Play!</StyledH2>
-        <IconButton icon={'RefreshCw'} label="Reset" onClick={resetResults} />
-      </StyledDiv>
+    <View
+      heading={
+        <S.HeaderContainer>
+          <S.H1>Play!</S.H1>
+          <IconButton icon={'RefreshCw'} label="Reset" onClick={resetResults} />
+        </S.HeaderContainer>
+      }
+    >
       <PlayerResults players={players} recordResult={recordResult} />
       <BigFunLink to={ROUTES.PUDDING} translation="Next!">
         次!

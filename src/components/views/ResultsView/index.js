@@ -48,7 +48,7 @@ function ResultsView({ hasPlayers, players }) {
     )
   }
   return (
-    <View>
+    <View heading="Results">
       <h2>And the winner is...</h2>
       {renderPlayers()}
       <BigFunLink to={ROUTES.PLAY_AGAIN} translation="Play again?">

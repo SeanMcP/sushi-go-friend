@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledH3 = styled.h3`
+export const H2 = styled.h2`
   margin-bottom: 0.5rem;
 `
 
