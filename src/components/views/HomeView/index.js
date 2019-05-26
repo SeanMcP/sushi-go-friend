@@ -5,6 +5,8 @@ import ExternalLink from 'components/common/ExternalLink'
 import BigFunLink from 'components/common/BigFunLink'
 import Message from '../../common/Message/Message'
 
+import ROUTES from 'constants/routes'
+
 function HomeView() {
   return (
     <View>
@@ -32,7 +34,7 @@ function HomeView() {
       <p>
         If <b>you do have the game</b>, let's get started!
       </p>
-      <BigFunLink to="/setup" translation="Setup!">
+      <BigFunLink to={ROUTES.SETUP} translation="Setup!">
         セットアップ!
       </BigFunLink>
     </View>

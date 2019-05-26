@@ -1,9 +1,12 @@
 import React from 'react'
-import { Redirect } from '@reach/router'
 
 import BigFunLink from 'components/common/BigFunLink'
 import IconButton from 'components/common/IconButton'
 import PlayerResults from 'components/common/PlayerResults'
+import RedirectToSetup from 'components/common/RedirectToSetup/RedirectToSetup'
+import View from 'components/View/View'
+import ROUTES from 'constants/routes'
+
 import { StyledDiv, StyledH2 } from './styled'
 
 function PlayView({
@@ -15,7 +18,7 @@ function PlayView({
   resetResults
 }) {
   if (!hasPlayers) {
-    return <Redirect to="/setup" noThrow />
+    return <RedirectToSetup />
   }
   React.useEffect(() => {
     if (hash === '#again') {
@@ -24,16 +27,16 @@ function PlayView({
     }
   })
   return (
-    <React.Fragment>
+    <View>
       <StyledDiv>
         <StyledH2>Play!</StyledH2>
         <IconButton icon={'RefreshCw'} label="Reset" onClick={resetResults} />
       </StyledDiv>
       <PlayerResults players={players} recordResult={recordResult} />
-      <BigFunLink to="/pudding" translation="Next!">
+      <BigFunLink to={ROUTES.PUDDING} translation="Next!">
         次!
       </BigFunLink>
-    </React.Fragment>
+    </View>
   )
 }
 

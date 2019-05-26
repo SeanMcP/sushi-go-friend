@@ -8,6 +8,8 @@ import View from 'components/View/View'
 import * as Form from 'components/form'
 import * as S from './styled'
 
+import ROUTES from 'constants/routes'
+
 function SetupView({
   addPlayer,
   hasPlayers,
@@ -92,7 +94,7 @@ function SetupView({
         <PlayerWarning numberOfPlayers={numberOfPlayers} />
       )}
       {numberOfPlayers > 1 && numberOfPlayers < 6 && (
-        <BigFunLink to="/play" translation="Play!">
+        <BigFunLink to={ROUTES.PLAY} translation="Play!">
           遊びます!
         </BigFunLink>
       )}

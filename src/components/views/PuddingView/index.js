@@ -2,11 +2,16 @@ import React from 'react'
 import { Redirect } from '@reach/router'
 
 import BigFunLink from 'components/common/BigFunLink'
+import RedirectToSetup from 'components/common/RedirectToSetup/RedirectToSetup'
+import View from 'components/View/View'
+
+import ROUTES from 'constants/routes'
+
 import { StyledH3, StyledLabel, StyledUl } from './styled'
 
 function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
   if (!hasPlayers) {
-    return <Redirect to="/setup" noThrow />
+    return <RedirectToSetup />
   }
   const [mostPudding, setMostPudding] = React.useState([])
   const [fewestPudding, setFewestPudding] = React.useState([])
@@ -51,7 +56,7 @@ function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
     fewestPudding.forEach(id => recordResult(id, 'pudding', pointsForFewest))
   }
   return (
-    <React.Fragment>
+    <View>
       <h2>Pudding!</h2>
       <StyledH3>Who had the most?</StyledH3>
       {renderPlayers('most')}
@@ -61,13 +66,13 @@ function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
         mostPudding.length === numberOfPlayers) && (
         <BigFunLink
           onClick={countPudding}
-          to="/results"
+          to={ROUTES.RESULTS}
           translation="Do the math!"
         >
           計算する!
         </BigFunLink>
       )}
-    </React.Fragment>
+    </View>
   )
 }
 

@@ -1,12 +1,14 @@
 import React from 'react'
-import { Redirect } from '@reach/router'
 
 import BigFunLink from 'components/common/BigFunLink'
+import RedirectToSetup from 'components/common/RedirectToSetup/RedirectToSetup'
+import View from 'components/View/View'
+import ROUTES from 'constants/routes'
 import { StyledLi, StyledOl, StyledItemContainer } from './styled'
 
 function ResultsView({ hasPlayers, players }) {
   if (!hasPlayers) {
-    return <Redirect to="/setup" noThrow />
+    return <RedirectToSetup />
   }
   function rankPlayers() {
     const output = []
@@ -46,13 +48,13 @@ function ResultsView({ hasPlayers, players }) {
     )
   }
   return (
-    <React.Fragment>
+    <View>
       <h2>And the winner is...</h2>
       {renderPlayers()}
-      <BigFunLink to="/play#again" translation="Play again?">
+      <BigFunLink to={ROUTES.PLAY_AGAIN} translation="Play again?">
         再びプレー?
       </BigFunLink>
-    </React.Fragment>
+    </View>
   )
 }
 
