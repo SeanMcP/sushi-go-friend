@@ -3,6 +3,7 @@ import React from 'react'
 import BigFunLink from 'components/common/BigFunLink'
 import IconButton from 'components/common/IconButton'
 import PlayerRow from 'components/common/PlayerRow'
+import PlayerWarning from 'components/setup/PlayerWarning/PlayerWarning'
 import * as Form from 'components/form'
 import * as S from './styled'
 
@@ -85,6 +86,9 @@ function SetupView({
           </S.ButtonContainer>
           <S.Ul>{renderPlayers()}</S.Ul>
         </React.Fragment>
+      )}
+      {numberOfPlayers > 5 && (
+        <PlayerWarning numberOfPlayers={numberOfPlayers} />
       )}
       {numberOfPlayers > 1 && numberOfPlayers < 6 && (
         <BigFunLink to="/play" translation="Play!">
