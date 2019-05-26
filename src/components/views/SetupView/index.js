@@ -4,6 +4,7 @@ import BigFunLink from 'components/common/BigFunLink'
 import IconButton from 'components/common/IconButton'
 import PlayerRow from 'components/common/PlayerRow'
 import PlayerWarning from 'components/setup/PlayerWarning/PlayerWarning'
+import View from 'components/View/View'
 import * as Form from 'components/form'
 import * as S from './styled'
 
@@ -48,7 +49,7 @@ function SetupView({
     inputRef.current.focus()
   }
   return (
-    <React.Fragment>
+    <View>
       <h2>Setup!</h2>
       <form onSubmit={handleSubmit}>
         <Form.Label htmlFor="player_input">Add players</Form.Label>
@@ -95,7 +96,7 @@ function SetupView({
           遊びます!
         </BigFunLink>
       )}
-    </React.Fragment>
+    </View>
   )
 }
 

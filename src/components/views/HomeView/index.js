@@ -1,12 +1,13 @@
 import React from 'react'
 
+import View from 'components/View/View'
 import ExternalLink from 'components/common/ExternalLink'
 import BigFunLink from 'components/common/BigFunLink'
 import Message from '../../common/Message/Message'
 
 function HomeView() {
   return (
-    <React.Fragment>
+    <View>
       <h2>Hi, I'm Sushi Go Friend!</h2>
       <p>
         I'm a simple companion app for{' '}
@@ -34,7 +35,7 @@ function HomeView() {
       <BigFunLink to="/setup" translation="Setup!">
         セットアップ!
       </BigFunLink>
-    </React.Fragment>
+    </View>
   )
 }
 
