@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from '@reach/router'
 
 import BigFunLink from 'components/common/BigFunLink'
 import RedirectToSetup from 'components/common/RedirectToSetup/RedirectToSetup'
