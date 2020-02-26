@@ -11,24 +11,20 @@ import PuddingView from '../views/PuddingView'
 import PlayView from '../views/PlayView'
 import ResultsView from '../views/ResultsView'
 
-import { PlayersProvider } from 'context/PlayersContext'
-
 import ROUTES from 'constants/routes'
 
 function App() {
-  const Players = usePlayers()
+  const players = usePlayers()
 
   return (
     <StyleProvider>
-      <PlayersProvider>
-        <Router>
-          <HomeView path={ROUTES.HOME} {...Players} />
-          <SetupView path={ROUTES.SETUP} {...Players} />
-          <PlayView path={ROUTES.PLAY} {...Players} />
-          <PuddingView path={ROUTES.PUDDING} {...Players} />
-          <ResultsView path={ROUTES.RESULTS} {...Players} />
-        </Router>
-      </PlayersProvider>
+      <Router>
+        <HomeView path={ROUTES.HOME} />
+        <SetupView path={ROUTES.SETUP} {...players} />
+        <PlayView path={ROUTES.PLAY} {...players} />
+        <PuddingView path={ROUTES.PUDDING} {...players} />
+        <ResultsView path={ROUTES.RESULTS} {...players} />
+      </Router>
     </StyleProvider>
   )
 }
