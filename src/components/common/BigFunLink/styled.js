@@ -23,6 +23,8 @@ export const StyledLink = styled(Link)`
   }
 
   @media screen and (min-width: ${props => props.theme.MOBILE}) {
+    height: 3rem;
+
     span:last-of-type {
       display: none;
     }
