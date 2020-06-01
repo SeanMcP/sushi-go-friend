@@ -1,7 +1,7 @@
 {
   "name": "sushi-go-friend",
   "author": "Sean McPherson",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@reach/router": "^1.3.1",
