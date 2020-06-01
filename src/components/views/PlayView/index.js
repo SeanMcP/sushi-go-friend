@@ -17,15 +17,15 @@ function PlayView({
   recordResult,
   resetResults
 }) {
-  if (!hasPlayers) {
-    return <RedirectToSetup />
-  }
   React.useEffect(() => {
     if (hash === '#again') {
       resetResults()
       navigate('/play')
     }
   })
+  if (!hasPlayers) {
+    return <RedirectToSetup />
+  }
   return (
     <View
       heading={

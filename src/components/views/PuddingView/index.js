@@ -9,11 +9,13 @@ import ROUTES from 'constants/routes'
 import { H2, StyledLabel, StyledUl } from './styled'
 
 function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
+  const [mostPudding, setMostPudding] = React.useState([])
+  const [fewestPudding, setFewestPudding] = React.useState([])
+
   if (!hasPlayers) {
     return <RedirectToSetup />
   }
-  const [mostPudding, setMostPudding] = React.useState([])
-  const [fewestPudding, setFewestPudding] = React.useState([])
+
   function renderPlayers(key) {
     const output = []
     for (const id in players) {
@@ -34,6 +36,7 @@ function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
     }
     return <StyledUl>{output}</StyledUl>
   }
+
   function setPuddingValue(key, id) {
     const state = key === 'most' ? mostPudding : fewestPudding
     const setState = key === 'most' ? setMostPudding : setFewestPudding
@@ -47,6 +50,7 @@ function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
       }
     }
   }
+
   function countPudding() {
     const pointsForMost = 6 / mostPudding.length
     const pointsForFewest = -6 / fewestPudding.length
