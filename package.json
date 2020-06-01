@@ -16,8 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier 'src/**/*.{js,jsx}' --write",
-    "fix:dependencies": "rm -rf node_modules/ yarn.lock && yarn"
+    "format": "prettier 'src/**/*.{js,jsx}' --write"
   },
   "eslintConfig": {
     "extends": "react-app"
