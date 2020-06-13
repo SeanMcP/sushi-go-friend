@@ -66,12 +66,8 @@ function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
       {renderPlayers('fewest')}
       {((mostPudding.length > 0 && fewestPudding.length > 0) ||
         mostPudding.length === numberOfPlayers) && (
-        <BigFunLink
-          onClick={countPudding}
-          to={ROUTES.RESULTS}
-          translation="Do the math!"
-        >
-          計算する!
+        <BigFunLink onClick={countPudding} to={ROUTES.RESULTS}>
+          Do the math
         </BigFunLink>
       )}
     </View>

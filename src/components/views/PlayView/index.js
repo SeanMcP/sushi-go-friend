@@ -36,9 +36,7 @@ function PlayView({
       }
     >
       <PlayerResults players={players} recordResult={recordResult} />
-      <BigFunLink to={ROUTES.PUDDING} translation="Next!">
-        次!
-      </BigFunLink>
+      <BigFunLink to={ROUTES.PUDDING}>Next!</BigFunLink>
     </View>
   )
 }

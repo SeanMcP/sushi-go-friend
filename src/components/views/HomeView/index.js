@@ -33,9 +33,7 @@ function HomeView() {
       <p>
         If <b>you do have the game</b>, let's get started!
       </p>
-      <BigFunLink to={ROUTES.SETUP} translation="Setup!">
-        セットアップ!
-      </BigFunLink>
+      <BigFunLink to={ROUTES.SETUP}>Setup!</BigFunLink>
     </View>
   )
 }

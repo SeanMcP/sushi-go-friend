@@ -6,10 +6,11 @@ export const StyledLink = styled(Link)`
   border: 2px solid white;
   border-radius: 0.5rem;
   color: white;
-  display: block;
+  display: grid;
   font-size: 2rem;
   margin: 2rem auto 0;
   padding: 0.5rem 1rem;
+  place-items: center;
   text-align: center;
   text-decoration: none;
   transition: all 100ms ease-in-out;
@@ -24,32 +25,5 @@ export const StyledLink = styled(Link)`
 
   @media screen and (min-width: ${props => props.theme.MOBILE}) {
     height: 3rem;
-
-    span:last-of-type {
-      display: none;
-    }
-    &:hover,
-    &:active,
-    &:focus {
-      span:first-of-type {
-        display: none;
-      }
-      span:last-of-type {
-        display: block;
-      }
-    }
-  }
-
-  @media screen and (max-width: ${props => props.theme.MOBILE}) {
-    font-size: 1.5rem;
-
-    span {
-      display: block;
-    }
-    span:last-of-type {
-      font-size: 1rem;
-      padding-top: 0.25rem;
-      text-align: center;
-    }
   }
 `

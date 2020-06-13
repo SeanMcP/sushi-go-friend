@@ -8,7 +8,6 @@
 - 🙋‍♀️ Reach Router
 - 💅 Styled Components
 - 🦉 Feather Icons
-- 😅 Google-translated Japanese
 
 ## ♿️ Accessibility
 

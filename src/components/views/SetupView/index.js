@@ -93,9 +93,7 @@ function SetupView({
         <PlayerWarning numberOfPlayers={numberOfPlayers} />
       )}
       {numberOfPlayers > 1 && numberOfPlayers < 6 && (
-        <BigFunLink to={ROUTES.PLAY} translation="Play!">
-          遊びます!
-        </BigFunLink>
+        <BigFunLink to={ROUTES.PLAY}>Play!</BigFunLink>
       )}
     </View>
   )
