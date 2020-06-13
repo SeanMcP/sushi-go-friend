@@ -18,7 +18,6 @@ function SetupView({
   removeAllPlayers,
   removePlayer
 }) {
-  const inputRef = React.createRef()
   function renderPlayers() {
     const output = []
     for (const id in players) {
@@ -48,7 +47,6 @@ function SetupView({
       addPlayer(name)
       e.target.reset()
     }
-    inputRef.current.focus()
   }
   return (
     <View heading="Setup">
@@ -60,10 +58,10 @@ function SetupView({
         <S.InputButtonContainer>
           <Form.UncontrolledInput
             aria-describedby="player_input_help"
+            autoFocus
             id="player_input"
             name="name"
             placeholder="Who's playing?"
-            ref={inputRef}
             type="text"
           />
           <IconButton
