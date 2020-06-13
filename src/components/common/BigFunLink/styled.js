@@ -18,12 +18,12 @@ export const StyledLink = styled(Link)`
   &:hover,
   &:active,
   &:focus {
-    background: ${props => props.theme.ORANGE};
-    border-color: ${props => props.theme.ORANGE};
-    color: ${props => props.theme.RED};
+    background: var(--ORANGE);
+    border-color: var(--ORANGE);
+    color: var(--RED);
   }
 
-  @media screen and (min-width: ${props => props.theme.MOBILE}) {
+  @media screen and (min-width: 800px) {
     height: 3rem;
   }
 `

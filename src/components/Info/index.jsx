@@ -22,7 +22,7 @@ const Container = styled.div`
 `
 
 const ExternalLink = styled(_ExternalLink)`
-  color: ${p => p.theme.RED} !important;
+  color: var(--RED) !important;
 `
 
 function useToggle(defaultState = false) {

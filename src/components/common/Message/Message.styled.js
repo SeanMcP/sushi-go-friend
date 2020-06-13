@@ -4,14 +4,14 @@ export const Container = styled.div`
   align-items: center;
   background: white;
   border-radius: 0.5rem;
-  color: ${p => p.theme.RED};
+  color: var(--RED);
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: min-content auto;
   padding: 1rem;
 
   a {
-    color: ${p => p.theme.RED};
+    color: var(--RED);
   }
 `
 

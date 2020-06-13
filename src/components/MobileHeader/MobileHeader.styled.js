@@ -4,7 +4,7 @@ import { Link as _Link } from '@reach/router'
 
 export const Header = styled.header`
   align-items: center;
-  background: ${p => p.theme.RED};
+  background: var(--RED);
   box-shadow: 0 0 0.5rem hsla(0, 0%, 0%, 20%);
   color: white;
   display: flex;
@@ -32,7 +32,7 @@ export const HOVER_FOCUS_ACTIVE_STYLES = `
   &:focus,
   &:active {
     background: rgba(0, 0, 0, 0.1);
-    color: ${p => p.theme.ORANGE};
+    color: var(--ORANGE);
     outline: 4px solid transparent;
   }
 `

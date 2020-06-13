@@ -10,7 +10,7 @@ export const StyledLi = styled.li`
   ${props =>
     props.first &&
     css`
-      color: ${props => props.theme.ORANGE};
+      color: var(--ORANGE);
       font-weight: bold;
     `}
 `

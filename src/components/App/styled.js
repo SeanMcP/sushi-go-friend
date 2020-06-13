@@ -1,12 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledDiv = styled.div`
-  background: linear-gradient(
-    to bottom,
-    ${props => props.theme.dark_pink},
-    ${props => props.theme.pink}
-  );
-  background: ${props => props.theme.RED};
+  background: var(--RED);
   color: white;
   display: flex;
   flex-direction: column;
