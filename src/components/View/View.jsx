@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Footer from 'components/Footer'
 import MobileHeader from 'components/MobileHeader/MobileHeader'
 import ContentContainer from 'components/common/ContentContainer'
 import * as S from './View.styled'
@@ -20,7 +19,6 @@ function View({ children, heading }) {
         )}
         {children}
       </ContentContainer>
-      <Footer />
     </S.Container>
   )
 }
