@@ -17,7 +17,7 @@ function MobileHeader() {
   const { pathname } = window.location
   return (
     <S.Header>
-      <ContentContainer style={{ position: 'relative', textAlign: 'center' }}>
+      <S.ContentContainer>
         {pathname !== ROUTES.HOME && (
           <S.BackLink to={previousMap[pathname]}>
             <Icon icon="ChevronLeft" label="Back" />
@@ -25,7 +25,7 @@ function MobileHeader() {
         )}
         <S.Link to={ROUTES.HOME}>Sushi Go Friend</S.Link>
         <Info />
-      </ContentContainer>
+      </S.ContentContainer>
     </S.Header>
   )
 }
