@@ -40,7 +40,7 @@ const style = {
     borderRadius: '1rem',
     maxWidth: '36rem',
     position: 'relative',
-    width: '80vw'
+    width: '60vw'
   },
   heading: {
     marginTop: 0,
