@@ -1,4 +1,4 @@
-export default {
+const routes = {
   HOME: '/',
   PLAY: '/play',
   PLAY_AGAIN: '/play#again',
@@ -6,3 +6,5 @@ export default {
   RESULTS: '/results',
   SETUP: '/setup'
 }
+
+export default routes
