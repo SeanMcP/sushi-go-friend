@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from '@reach/router'
+import { Link } from 'react-router-dom'
 
 export const StyledHeader = styled.header`
   padding: 1rem 0;
@@ -10,7 +10,7 @@ export const StyledH1 = styled.h1`
   margin: 0;
   text-align: center;
 
-  @media screen and (max-width: ${props => props.theme.MOBILE}) {
+  @media screen and (max-width: ${p => p.theme.MOBILE}) {
     font-size: 2.25rem;
 
     span:last-of-type {
@@ -36,7 +36,7 @@ export const StyledLink = styled(Link)`
     transition: all 200ms ease-in-out;
   }
 
-  @media screen and (min-width: ${props => props.theme.MOBILE}) {
+  @media screen and (min-width: ${p => p.theme.MOBILE}) {
     span {
       position: absolute;
     }
@@ -55,7 +55,7 @@ export const StyledLink = styled(Link)`
     }
   }
 
-  @media screen and (max-width: ${props => props.theme.MOBILE}) {
+  @media screen and (max-width: ${p => p.theme.MOBILE}) {
     display: block;
   }
 `

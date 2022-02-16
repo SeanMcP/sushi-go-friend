@@ -1,9 +1,8 @@
 import React from 'react'
 
 import BigFunLink from 'components/common/BigFunLink'
-import RedirectToSetup from 'components/common/RedirectToSetup/RedirectToSetup'
 import View from 'components/View/View'
-
+import { useRedirectToSetup } from 'hooks/useRedirectToSetup'
 import ROUTES from 'constants/routes'
 
 import { H2, StyledLabel, StyledUl } from './styled'
@@ -11,10 +10,7 @@ import { H2, StyledLabel, StyledUl } from './styled'
 function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
   const [mostPudding, setMostPudding] = React.useState([])
   const [fewestPudding, setFewestPudding] = React.useState([])
-
-  if (!hasPlayers) {
-    return <RedirectToSetup />
-  }
+  useRedirectToSetup(hasPlayers)
 
   function renderPlayers(key) {
     const output = []
@@ -55,23 +51,30 @@ function PuddingView({ hasPlayers, numberOfPlayers, players, recordResult }) {
     const pointsForMost = 6 / mostPudding.length
     const pointsForFewest = -6 / fewestPudding.length
 
-    mostPudding.forEach(id => recordResult(id, 'pudding', pointsForMost))
-    fewestPudding.forEach(id => recordResult(id, 'pudding', pointsForFewest))
+    const scores = {}
+    mostPudding.forEach(id => {
+      if (!scores[id]) scores[id] = 0
+      scores[id] += pointsForMost
+    })
+    fewestPudding.forEach(id => {
+      if (!scores[id]) scores[id] = 0
+      scores[id] += pointsForFewest
+    })
+
+    for (const id in scores) {
+      recordResult(id, 'pudding', scores[id])
+    }
   }
   return (
-    <View heading="Pudding">
+    <View heading="Don't forget the pudding">
       <H2>Who had the most?</H2>
       {renderPlayers('most')}
       <H2>Who had the fewest?</H2>
       {renderPlayers('fewest')}
       {((mostPudding.length > 0 && fewestPudding.length > 0) ||
         mostPudding.length === numberOfPlayers) && (
-        <BigFunLink
-          onClick={countPudding}
-          to={ROUTES.RESULTS}
-          translation="Do the math!"
-        >
-          計算する!
+        <BigFunLink onClick={countPudding} to={ROUTES.RESULTS}>
+          Do the math!
         </BigFunLink>
       )}
     </View>

@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
   &:active,
   &:focus,
   &:hover {
-    color: ${props => props.theme.ORANGE};
-    border-color: ${props => props.theme.ORANGE};
+    color: ${p => p.theme.ORANGE};
+    border-color: ${p => p.theme.ORANGE};
   }
 `

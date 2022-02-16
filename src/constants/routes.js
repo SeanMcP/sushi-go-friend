@@ -1,10 +1,11 @@
 const routes = {
   HOME: '/',
-  PLAY: '/play',
-  PLAY_AGAIN: '/play#again',
-  PUDDING: '/pudding',
+  PUDDING: '/round/pudding',
   RESULTS: '/results',
+  ROUND: '/round/:round',
   SETUP: '/setup'
 }
+
+routes.getRound = round => routes.ROUND.replace(':round', round)
 
 export default routes

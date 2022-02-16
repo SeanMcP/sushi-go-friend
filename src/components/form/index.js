@@ -31,7 +31,7 @@ export const Input = styled.input`
     `}
 
   &:focus {
-    box-shadow: 0 0 0 4px ${props => props.theme.ORANGE};
+    box-shadow: 0 0 0 4px ${p => p.theme.ORANGE};
   }
 `
 

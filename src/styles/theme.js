@@ -6,9 +6,14 @@ export const THEME = {
   BROWN: '#41210A',
   GREEN: '#AABA34',
   ORANGE: '#FEA612',
+  WHITE: '#FFFFFF',
   MOBILE: '800px',
   TEXT: '#424242'
 }
+
+THEME.BACKGROUND = THEME.DARK_RED
+THEME.FRAME = THEME.BROWN
+THEME.TEXT = THEME.WHITE
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -22,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a:focus, button:focus, input:focus {
-    box-shadow: 0 0 0 4px ${props => props.theme.ORANGE};
+    box-shadow: 0 0 0 4px ${p => p.theme.ORANGE};
     outline: 0;
   }
 
@@ -31,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   a:hover, a:active {
-    color: ${props => props.theme.ORANGE};
+    color: ${p => p.theme.ORANGE};
   }
 
   p { line-height: 150% }

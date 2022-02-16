@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link as _Link } from '@reach/router'
+import { Link as _Link } from 'react-router-dom'
 
 export const BackButton = styled.button`
   align-items: center;
@@ -25,13 +25,14 @@ export const BackButton = styled.button`
 
 export const Header = styled.header`
   align-items: center;
-  background: ${p => p.theme.RED};
+  background: ${p => p.theme.FRAME};
   color: white;
   display: flex;
   font-weight: bold;
   height: 48px;
   justify-content: center;
   position: relative;
+  text-transform: uppercase;
 `
 
 export const Link = styled(_Link)`

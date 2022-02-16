@@ -5,10 +5,9 @@
 ## 🧰 Using:
 
 - 🎣 React Hooks
-- 🙋‍♀️ Reach Router
+- 🚏 React Router
 - 💅 Styled Components
 - 🦉 Feather Icons
-- 😅 Google-translated Japanese
 
 ## ♿️ Accessibility
 

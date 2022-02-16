@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
   &:hover,
   &:active,
   &:focus {
-    color: ${props => props.theme.ORANGE};
+    color: ${p => p.theme.ORANGE};
   }
 
   ${p =>
@@ -23,13 +23,13 @@ export const StyledButton = styled.button`
     css`
       background: ${p.theme.ORANGE};
       border-radius: 0.5rem;
-      color: ${p.theme.RED};
+      color: ${p.theme.BACKGROUND};
 
       &:hover,
       &:active,
       &:focus {
         background: white;
-        color: ${p.theme.RED};
+        color: ${p.theme.BACKGROUND};
       }
     `}
 `

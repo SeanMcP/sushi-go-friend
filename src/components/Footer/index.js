@@ -14,8 +14,7 @@ function Footer() {
         <ExternalLink to="https://gamewright.com/">GAMEWRIGHT</ExternalLink>
       </p>
       <p>
-        Made by{' '}
-        <ExternalLink to="https://github.com/seanmcp">SeanMcP</ExternalLink>
+        Made by <ExternalLink to="https://seanmcp.com">SeanMcP</ExternalLink>
       </p>
     </StyledFooter>
   )

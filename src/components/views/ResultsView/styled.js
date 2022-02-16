@@ -8,9 +8,9 @@ export const StyledOl = styled.ol`
 
 export const StyledLi = styled.li`
   ${props =>
-    props.first &&
+    props.value === 1 &&
     css`
-      color: ${props => props.theme.ORANGE};
+      color: ${p => p.theme.ORANGE};
       font-weight: bold;
     `}
 `

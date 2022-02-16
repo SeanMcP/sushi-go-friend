@@ -24,18 +24,20 @@ function HomeView() {
         <ExternalLink to="https://gamewright.shptron.com/p/sushi-go?pp=8">
           GAMEWRIGHT
         </ExternalLink>{' '}
-        , on{' '}
+        ,{' '}
         <ExternalLink to="https://www.amazon.com/Sushi-Go-Pick-Pass-Card/dp/B00J57VU44/ref=sr_1_2">
           Amazon
         </ExternalLink>
-        , or your local game shop.
+        , or{' '}
+        <ExternalLink to="https://www.google.com/search?q=game+store+near+me">
+          your local game shop
+        </ExternalLink>
+        .
       </Message>
       <p>
         If <b>you do have the game</b>, let's get started!
       </p>
-      <BigFunLink to={ROUTES.SETUP} translation="Setup!">
-        セットアップ!
-      </BigFunLink>
+      <BigFunLink to={ROUTES.SETUP}>Setup!</BigFunLink>
     </View>
   )
 }
